@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredicAfrica - Bourse de Prédictions & Mobile Money</title>
+    <!-- Google Fonts: Outfit (headings) & Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- A. LANDING PAGE PUBLIC VIEW -->
+    <div id="app-landing">
+        <!-- Public Header -->
+        <header class="landing-header">
+            <div class="landing-header__brand">
+                <div class="brand-logo">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="brand-title">Predic<span>Africa</span></span>
+            </div>
+            <nav class="landing-nav">
+                <a href="#how-it-works" class="landing-nav__link" data-i18n="nav_how_it_works">Comment négocier</a>
+                <a href="#faq" class="landing-nav__link" data-i18n="nav_faq">FAQ</a>
+                <a href="#contact" class="landing-nav__link" data-i18n="nav_support">Support</a>
+                <button class="btn btn--outline" id="btn-enter-admin-direct" data-i18n="nav_backoffice">Backoffice</button>
+            </nav>
+            <div class="lang-selector">
+                <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="btn btn--primary" id="btn-enter-bourse" data-i18n="nav_enter_bourse">Accéder à la Bourse</button>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="landing-hero">
+            <div class="landing-hero__content">
+                <span class="hero-badge" data-i18n="hero_badge">Bourse d'Opinions P2P</span>
+                <h1 class="hero-title" data-i18n="hero_title">La première Bourse de Prédictions en Afrique</h1>
+                <p class="hero-desc" data-i18n="hero_desc">Prenez position sur la politique, la musique, le cinéma et l'économie locale. Investissez sur vos convictions, suivez les cotes et liquidez vos gains par Orange Money, MTN MoMo, Airtel Money, Wave ou Moov.</p>
+                <div class="hero-actions">
+                    <button class="btn btn--primary btn--lg" id="btn-hero-start" data-i18n="hero_start_btn">Commencer à négocier</button>
+                    <button class="btn btn--outline btn--lg" id="btn-hero-admin" data-i18n="hero_admin_btn">Backoffice Admin</button>
+                </div>
+                <div class="hero-metrics">
+                    <div class="hero-metric">
+                        <span class="metric-val">12M+ XOF</span>
+                        <span class="metric-lbl" data-i18n="hero_metric_volume">Volume Échangé</span>
+                    </div>
+                    <div class="hero-metric">
+                        <span class="metric-val">8+ Pays</span>
+                        <span class="metric-lbl" data-i18n="hero_metric_countries">Régions Couvertes</span>
+                    </div>
+                    <div class="hero-metric">
+                        <span class="metric-val">15s</span>
+                        <span class="metric-lbl" data-i18n="hero_metric_live">Mise à jour Live</span>
+                    </div>
+                </div>
+            </div>
+            <div class="landing-hero__visual">
+                <div class="mock-card mock-card--1">
+                    <span class="mock-tag mock-tag--politics" data-i18n="cat_politics">Politique</span>
+                    <h3 data-i18n="mock_title_senegal">Présidentielle Sénégal : Qui succédera à Diomaye Faye ?</h3>
+                    <div class="mock-odds">
+                        <span data-i18n="mock_odds_senegal_yes">Oui @ 1.85</span>
+                        <span data-i18n="mock_odds_senegal_no">Non @ 2.10</span>
+                    </div>
+                </div>
+                <div class="mock-card mock-card--2">
+                    <span class="mock-tag mock-tag--music" data-i18n="cat_music">Musique</span>
+                    <h3 data-i18n="mock_title_burna">Grammy Award 2027 pour Burna Boy ?</h3>
+                    <div class="mock-odds">
+                        <span data-i18n="mock_odds_burna_yes">Oui @ 1.65</span>
+                        <span data-i18n="mock_odds_burna_no">Non @ 2.30</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Comment ça marche -->
+        <section id="how-it-works" class="landing-section">
+            <h2 class="section-title text-center" data-i18n="steps_title">Comment ça marche ?</h2>
+            <p class="section-desc text-center" data-i18n="steps_desc">Négociez sur la bourse d'opinions en 4 étapes simples.</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3 data-i18n="step_1_title">Sélectionnez votre Région</h3>
+                    <p data-i18n="step_1_desc">Choisissez votre pays dans le sélecteur pour adapter automatiquement la devise et les réseaux mobiles disponibles.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3 data-i18n="step_2_title">Créditez votre Portefeuille</h3>
+                    <p data-i18n="step_2_desc">Déposez instantanément des fonds de manière sécurisée en utilisant votre compte Orange, MTN, Wave, Airtel ou Moov.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3 data-i18n="step_3_title">Prenez Position</h3>
+                    <p data-i18n="step_3_desc">Achetez des parts sur le Oui ou le Non pour les questions d'actualité. Suivez les cotes et optimisez vos rendements.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h3 data-i18n="step_4_title">Retirez vos liquidités</h3>
+                    <p data-i18n="step_4_desc">Une fois le marché clôturé, liquidez votre position et effectuez un retrait mobile money instantané vers votre téléphone.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: USSD Phone Simulator -->
+        <section id="ussd-demo" class="landing-section">
+            <div class="ussd-demo-layout" style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl); align-items: center;">
+                <div class="ussd-demo-info">
+                    <span class="hero-badge" style="align-self: flex-start;" data-i18n="ussd_badge">Exclusivité MVP</span>
+                    <h2 class="section-title" style="margin-top: 10px;" data-i18n="ussd_title">Négociez par USSD sans Internet</h2>
+                    <p class="section-desc" style="margin-left: 0; text-align: left; max-width: none;" data-i18n-html="ussd_desc">
+                        PredicAfrica innove en simulant un protocole USSD complet. Composez le <strong class="text--emerald">*855#</strong> sur notre téléphone interactif pour consulter votre solde, acheter des parts ou retirer vos gains directement depuis les réseaux télécoms locaux simulés.
+                    </p>
+                    <div class="ussd-instructions" style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-md);">
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <span class="step-num" style="width: 28px; height: 28px; font-size: 0.85rem; margin: 0; display: grid; place-items: center;">1</span>
+                            <span data-i18n-html="ussd_step_1">Composez <strong>*855#</strong> et cliquez sur le bouton d'appel vert.</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <span class="step-num" style="width: 28px; height: 28px; font-size: 0.85rem; margin: 0; display: grid; place-items: center;">2</span>
+                            <span data-i18n="ussd_step_2">Parcourez les menus popups GSM pour acheter des parts.</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <span class="step-num" style="width: 28px; height: 28px; font-size: 0.85rem; margin: 0; display: grid; place-items: center;">3</span>
+                            <span data-i18n-html="ussd_step_3">Confirmez avec le PIN <code>1234</code> et observez la mise à jour de vos positions.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ussd-demo-phone-wrapper" style="display: flex; justify-content: center;">
+                    <div class="mock-phone">
+                        <div class="phone-screen">
+                            <div class="phone-status-bar">
+                                <span id="ussd-phone-carrier" data-i18n="ussd_phone_carrier">Afrique Telecom</span>
+                                <span id="ussd-phone-time">17:50</span>
+                            </div>
+                            
+                            <!-- Dialer screen (visible by default) -->
+                            <div class="phone-dialer" id="phone-dialer-view">
+                                <div class="dialer-display" id="dialer-num">*855#</div>
+                                <div class="dialer-keypad">
+                                    <button type="button" class="key-btn" data-key="1">1</button>
+                                    <button type="button" class="key-btn" data-key="2">2</button>
+                                    <button type="button" class="key-btn" data-key="3">3</button>
+                                    <button type="button" class="key-btn" data-key="4">4</button>
+                                    <button type="button" class="key-btn" data-key="5">5</button>
+                                    <button type="button" class="key-btn" data-key="6">6</button>
+                                    <button type="button" class="key-btn" data-key="7">7</button>
+                                    <button type="button" class="key-btn" data-key="8">8</button>
+                                    <button type="button" class="key-btn" data-key="9">9</button>
+                                    <button type="button" class="key-btn" data-key="*">*</button>
+                                    <button type="button" class="key-btn" data-key="0">0</button>
+                                    <button type="button" class="key-btn" data-key="#">#</button>
+                                </div>
+                                <div class="dialer-actions">
+                                    <button type="button" class="call-btn" id="btn-dialer-call">📞</button>
+                                    <button type="button" class="clear-btn" id="btn-dialer-clear">⌫</button>
+                                </div>
+                            </div>
+ 
+                            <!-- USSD Box screen (hidden by default) -->
+                            <div class="phone-ussd-container" id="phone-ussd-view" style="display: none;">
+                                <div class="ussd-dialog-box">
+                                    <div class="ussd-dialog-text" id="ussd-dialog-message">
+                                        Menu Principal PredicAfrica:<br>
+                                        1. Investir sur un marché<br>
+                                        2. Solde Portefeuille<br>
+                                        3. Retirer des fonds
+                                    </div>
+                                    <input type="text" class="ussd-dialog-input" id="ussd-dialog-input-val" data-i18n-placeholder="ussd_input_placeholder" placeholder="Saisissez un chiffre...">
+                                    <div class="ussd-dialog-actions">
+                                        <button type="button" class="ussd-dialog-btn" id="btn-ussd-dialog-cancel" data-i18n="ussd_btn_cancel">Annuler</button>
+                                        <button type="button" class="ussd-dialog-btn" id="btn-ussd-dialog-send" data-i18n="ussd_btn_send">Envoyer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone-home-btn" id="phone-home-btn-trigger"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: FAQ -->
+        <section id="faq" class="landing-section landing-section--alt">
+            <h2 class="section-title text-center" data-i18n="faq_title">Foire Aux Questions (FAQ)</h2>
+            <p class="section-desc text-center" data-i18n="faq_desc">Tout ce qu'il faut savoir sur PredicAfrica.</p>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question" data-i18n="faq_q1">Qu'est-ce qu'une bourse de prédictions ?</button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq_a1">Une bourse de prédictions est une plateforme financière sur laquelle vous pouvez acheter des contrats (parts) liés à la réalisation d'événements futurs. Si l'événement se réalise, le contrat prend de la valeur et vous encaissez un rendement basé sur le multiplicateur de cotes garanti lors de votre achat.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-i18n="faq_q2">Comment fonctionne la simulation de Mobile Money ?</button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq_a2">Il s'agit d'un simulateur GSM interactif. Vous pouvez simuler des recharges et des retraits d'argent en entrant un numéro et en saisissant un code secret fictif à 4 chiffres (comme 1234). Cela vous permet de valider le comportement fonctionnel de la plateforme.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-i18n="faq_q3">Les retraits de fonds sont-ils instantanés ?</button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq_a3">Oui. En cliquant sur le bouton Retirer de votre portefeuille, le simulateur traite la transaction en 2 secondes et met à jour instantanément votre compte virtuel, comme un retrait Mobile Money en production.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-i18n="faq_q4">Est-ce légal et sécurisé ?</button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq_a4">Il s'agit ici d'une simulation MVP destinée à présenter le design technique et l'expérience utilisateur. Aucune transaction financière réelle n'est effectuée. Les soldes et les dépôts sont purement virtuels et stockés localement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Section: Yield Calculator (Simulateur de Gains) -->
+        <section id="yield-calc" class="landing-section landing-section--alt">
+            <h2 class="section-title text-center" data-i18n="calc_title">Simulateur de Gains & Rendements</h2>
+            <p class="section-desc text-center" data-i18n="calc_desc">Estimez vos profits potentiels en fonction de vos investissements et des cotes de marché.</p>
+            
+            <div class="creator-card" style="max-width: 600px; margin: 0 auto;">
+                <form id="profit-calc-form" class="creator-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="calc-market" data-i18n="calc_label_market">Sélectionnez un Marché</label>
+                            <select id="calc-market" style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); width: 100%;">
+                                <option value="1.85" data-i18n="calc_opt_1">Présidentielle Sénégal (Oui @ 1.85)</option>
+                                <option value="2.30" data-i18n="calc_opt_2">Grammy Award Burna Boy (Non @ 2.30)</option>
+                                <option value="2.80" data-i18n="calc_opt_3">Monnaie ECO CEDEAO (Oui @ 2.80)</option>
+                                <option value="1.60" data-i18n="calc_opt_4">FESPACO Alain Gomis (Non @ 1.60)</option>
+                                <option value="custom" data-i18n="calc_opt_custom">Autre Cote (Personnalisée)</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="calc-custom-odds-group" style="display: none;">
+                            <label for="calc-odds" data-i18n="calc_label_odds">Cote / Multiplicateur</label>
+                            <input type="number" id="calc-odds" value="2.00" step="0.1" min="1.01" max="10.0" style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); width: 100%;">
+                        </div>
+                    </div>
+ 
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="calc-amount" data-i18n-html="calc_label_amount">Montant à investir (<span class="calc-currency-lbl">XOF</span>)</label>
+                            <input type="number" id="calc-amount" value="5000" min="200" step="100" style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); width: 100%;">
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-outcome" data-i18n="calc_label_outcome">Résultat Simulé</label>
+                            <select id="calc-outcome" style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); width: 100%;">
+                                <option value="win" data-i18n="calc_opt_win">Position gagnante (Correcte)</option>
+                                <option value="loss" data-i18n="calc_opt_loss">Position perdante (Incorrecte)</option>
+                            </select>
+                        </div>
+                    </div>
+ 
+                    <div class="bet-payout-estimate" style="margin-top: var(--space-md);">
+                        <div class="estimate-row">
+                            <span data-i18n="calc_result_gross_lbl">Rendement Brut Potentiel :</span>
+                            <strong id="calc-result-gross" class="text--emerald">9 250 XOF</strong>
+                        </div>
+                        <div class="estimate-row" style="margin-top: 4px;">
+                            <span data-i18n="calc_result_net_lbl">Bénéfice Net :</span>
+                            <strong id="calc-result-net" class="text--gold">+4 250 XOF</strong>
+                        </div>
+                        <div class="estimate-row font-sm text--muted" style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
+                            <span data-i18n="calc_result_status_lbl">Statut Estimé :</span>
+                            <span id="calc-result-status" class="status-txt-badge status-txt-badge--success" style="padding: 2px 8px; font-size: 0.75rem;">Gagné</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section: Contact & Support -->
+        <section id="contact" class="landing-section">
+            <h2 class="section-title text-center" data-i18n="contact_title">Contact & Support</h2>
+            <p class="section-desc text-center" data-i18n="contact_desc">Notre équipe de support est disponible pour vous assister. Envoyez-nous un message.</p>
+            
+            <div class="contact-layout" style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl); max-width: 1000px; margin: 0 auto;">
+                <!-- Column 1: Info Cards -->
+                <div class="contact-info-col" style="display: flex; flex-direction: column; gap: var(--space-md);">
+                    <div class="contact-card">
+                        <h3 data-i18n="contact_card_email_title">✉️ E-mail</h3>
+                        <p>support@predicafrika.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3 data-i18n="contact_card_offices_title">📍 Bureaux</h3>
+                        <p data-i18n="contact_card_offices_desc">Dakar Design Hub, Avenue Cheikh Anta Diop, Dakar, Sénégal</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3 data-i18n="contact_card_phone_title">📞 Téléphone</h3>
+                        <p>+221 33 892 04 04</p>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Interactive Form -->
+                <div class="creator-card">
+                    <form id="landing-contact-form" class="creator-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-lastname" data-i18n="contact_label_lastname">Nom</label>
+                                <input type="text" id="contact-lastname" data-i18n-placeholder="contact_placeholder_lastname" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-firstname" data-i18n="contact_label_firstname">Prénom</label>
+                                <input type="text" id="contact-firstname" data-i18n-placeholder="contact_placeholder_firstname" placeholder="Votre prénom" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" data-i18n="contact_label_email">Adresse e-mail</label>
+                            <input type="email" id="contact-email" data-i18n-placeholder="contact_placeholder_email" placeholder="nom@exemple.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" data-i18n="contact_label_message">Votre message</label>
+                            <textarea id="contact-message" rows="5" data-i18n-placeholder="contact_placeholder_message" placeholder="Décrivez votre demande en détail..." required style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); font-size: 0.9rem; transition: var(--transition-fast); width: 100%; color: var(--text-primary); resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--block" data-i18n="contact_btn_send">Envoyer le message</button>
+                    </form>
+                    <div id="contact-success-msg" class="status-txt-badge status-txt-badge--success" data-i18n="contact_success_msg" style="display: none; width: 100%; text-align: center; justify-content: center; padding: var(--space-md); margin-top: var(--space-md); font-size: 0.9rem;">
+                        ✓ Message envoyé avec succès ! Notre équipe vous répondra sous 24h.
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Floating WhatsApp Widget -->
+        <div class="whatsapp-widget" id="whatsapp-toggle">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.218h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.038-5.176-2.925-7.064A9.923 9.923 0 0 0 12.012 2zm5.727 14.073c-.314.444-1.543 1.208-2.115 1.264-.537.052-1.054.212-3.167-.624a10.84 10.84 0 0 1-4.394-3.87c-.636-.874-1.096-1.89-1.096-2.95 0-1.127.587-1.685.8-1.9.176-.177.447-.26.697-.26h.227c.18 0 .42-.08.647.444.25.577.85 2.083.923 2.23.074.148.125.321.023.518-.1.198-.152.322-.303.495l-.46.543c-.153.173-.314.362-.132.673.18.31.8 1.317 1.72 2.137.92.82 1.693 1.074 2.023 1.238.33.165.52.14.717-.082.197-.222.85-1.037 1.077-1.393.226-.356.452-.3.76-.185.31.115 1.968.966 2.308 1.135.34.17.568.25.65.39.083.14.083.82-.231 1.264z"/>
+            </svg>
+            <span class="whatsapp-badge">1</span>
+        </div>
+ 
+        <!-- WhatsApp Chat Window -->
+        <div class="whatsapp-chat" id="whatsapp-chat-window">
+            <div class="whatsapp-chat__header">
+                <div class="whatsapp-chat__avatar">PA</div>
+                <div class="whatsapp-chat__info">
+                    <span class="chat-name" data-i18n="wa_chat_name">Support PredicAfrica</span>
+                    <span class="chat-status" data-i18n="wa_chat_status">En ligne</span>
+                </div>
+                <button class="chat-close" id="whatsapp-chat-close">&times;</button>
+            </div>
+            <div class="whatsapp-chat__messages" id="whatsapp-messages-container">
+                <div class="chat-msg chat-msg--received" data-i18n-html="wa_welcome">
+                    Bonjour ! Je suis Ablaye du support PredicAfrica. Comment puis-je vous aider aujourd'hui ? 🌍
+                    <span class="msg-time">17:00</span>
+                </div>
+            </div>
+            <div class="whatsapp-chat__input-area">
+                <input type="text" id="whatsapp-user-input" data-i18n-placeholder="wa_input_placeholder" placeholder="Écrivez votre message...">
+                <button id="whatsapp-send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9L22 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+ 
+        <!-- Footer with legal links -->
+        <footer class="landing-footer" style="padding: var(--space-lg) var(--space-md); text-align: center; border-top: 1px solid var(--border-color); background-color: var(--bg-secondary); margin-top: var(--space-xxl);">
+            <p class="text--muted font-sm" data-i18n="footer_copyright" style="margin-bottom: var(--space-sm);">© 2026 PredicAfrica. Tous droits réservés. (Simulation de démonstration MVP)</p>
+            <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
+                <a href="#cgu" id="link-cgu" class="font-sm text--muted" data-i18n="footer_link_cgu" style="text-decoration: underline; cursor: pointer;">Conditions Générales</a>
+                <a href="#privacy" id="link-privacy" class="font-sm text--muted" data-i18n="footer_link_privacy" style="text-decoration: underline; cursor: pointer;">Confidentialité</a>
+                <a href="#data" id="link-data" class="font-sm text--muted" data-i18n="footer_link_data" style="text-decoration: underline; cursor: pointer;">Gestion des Données</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- B. APP WORKSPACE VIEW -->
+    <div id="app-workspace" style="display: none;">
+        <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar__brand">
+                <div class="brand-logo">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="brand-title">Predic<span>Africa</span></h1>
+            </div>
+
+            <!-- Country/Region Selector -->
+            <div class="country-selector">
+                <label for="user-country" class="country-selector__label">Région :</label>
+                <select id="user-country" class="country-selector__select">
+                    <option value="SEN" selected>🇸🇳 Sénégal (XOF)</option>
+                    <option value="CIV">🇨🇮 Côte d'Ivoire (XOF)</option>
+                    <option value="CMR">🇨🇲 Cameroun (XAF)</option>
+                    <option value="COD">🇨🇩 RDC (CDF)</option>
+                    <option value="COG">🇨🇬 Congo Brazzaville (XAF)</option>
+                    <option value="GAB">🇬🇦 Gabon (XAF)</option>
+                    <option value="BEN">🇧🇯 Bénin (XOF)</option>
+                    <option value="TGO">🇹🇬 Togo (XOF)</option>
+                </select>
+            </div>
+
+            <!-- User Wallet Widget inside Sidebar -->
+            <div class="wallet-widget">
+                <div class="wallet-widget__header">
+                    <span class="wallet-widget__title">Mon Portefeuille</span>
+                    <span class="wallet-widget__badge">Compte MVP</span>
+                </div>
+                <div class="wallet-widget__balance">
+                    <span class="balance-value" id="user-balance">15 000</span>
+                    <span class="balance-currency">FCFA</span>
+                </div>
+                <div class="wallet-widget__actions" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xs);">
+                    <button class="btn btn--primary btn--block" id="btn-recharge-trigger" style="padding: 0.5rem var(--space-xs); font-size: 0.8rem;">
+                        Recharger
+                    </button>
+                    <button class="btn btn--outline btn--block" id="btn-withdraw-trigger" style="padding: 0.5rem var(--space-xs); font-size: 0.8rem; border-color: var(--accent-emerald);">
+                        Retirer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-menu__item active" data-view="dashboard">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="7" height="9" rx="1" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <rect x="14" y="3" width="7" height="5" rx="1" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <rect x="14" y="12" width="7" height="9" rx="1" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <rect x="3" y="16" width="7" height="5" rx="1" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Tableau de Bord</span>
+                </a>
+                <a href="#my-bets" class="nav-menu__item" data-view="my-bets">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15M9 5C9 6.10457 9.89543 7 11 7H13C14.1046 7 15 6.10457 15 5M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5M12 12H15M12 16H15M9 12H9.01M9 16H9.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Mes Positions</span>
+                    <span class="badge badge--accent" id="active-bets-count">0</span>
+                </a>
+                <a href="#transactions" class="nav-menu__item" data-view="transactions">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="#creator" class="nav-menu__item" data-view="creator">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Créer un Marché</span>
+                </a>
+                <a href="#backoffice" class="nav-menu__item" data-view="backoffice" id="nav-item-backoffice">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Backoffice Admin</span>
+                </a>
+            </nav>
+
+            <!-- Bottom Profile / Switcher -->
+            <div class="sidebar__profile">
+                <div class="profile-avatar">AD</div>
+                <div class="profile-info">
+                    <div class="profile-name" id="user-profile-name">Ablaye Diop</div>
+                    <div class="profile-location">Dakar, Sénégal</div>
+                </div>
+                <button class="btn-text-action btn-logout" id="btn-logout-trigger" style="margin-left: auto; font-size: 0.75rem; color: var(--accent-red);">
+                    Quitter
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Panel -->
+        <main class="main-panel">
+            
+            <!-- Header Section -->
+            <header class="app-header">
+                <!-- Search & Filters -->
+                <div class="app-header__search">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-search">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input type="text" id="search-predictions" placeholder="Rechercher des élections, artistes, films, tendances...">
+                </div>
+
+                <!-- Notifications & Quick Status -->
+                <div class="app-header__actions">
+                    <div class="status-indicator">
+                        <span class="pulse-dot"></span>
+                        <span class="status-text">Simulateur Actif</span>
+                    </div>
+                    
+                    <div class="notification-bell">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 17H20L18.5951 15.5951C17.5841 14.5841 17 13.213 17 11.783V8.78289C17 6.0243 14.9925 3.73351 12.3162 3.16113C12.1932 2.49079 11.6053 2 10.9 2C10.1947 2 9.60683 2.49079 9.48376 3.16113C6.80753 3.73351 4.8 6.0243 4.8 8.78289V11.783C4.8 13.213 4.2159 14.5841 3.2049 15.5951L1.8 17H20M15 17V18C15 20.2091 13.2091 22 11 22C8.79086 22 7 20.2091 7 18V17H15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="notification-badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- View Wrapper -->
+            <div class="view-content">
+
+                <!-- 1. DASHBOARD VIEW -->
+                <section id="view-dashboard" class="view-section active">
+                    
+                    <!-- Featured Market Card (Hero) -->
+                    <div class="featured-banner">
+                        <div class="featured-banner__content">
+                            <span class="category-tag category-tag--politics">Élections 2026</span>
+                            <h2 class="banner-title">Présidentielle au Sénégal : Qui succédera à Bassirou Diomaye Faye ?</h2>
+                            <p class="banner-desc">Suivez les prédictions citoyennes et investissez sur l'issue des scrutins démocratiques. Les valeurs fluctuent en fonction des prises de positions et des tendances du marché.</p>
+                            
+                            <div class="banner-odds">
+                                <div class="odds-group">
+                                    <button class="btn btn--outline btn--odds" id="featured-btn-yes">
+                                        <span class="odds-label">Candidat Coalition Clé</span>
+                                        <span class="odds-val" id="featured-odds-yes">1.85</span>
+                                    </button>
+                                    <button class="btn btn--outline btn--odds" id="featured-btn-no">
+                                        <span class="odds-label">Autre Candidat</span>
+                                        <span class="odds-val" id="featured-odds-no">2.10</span>
+                                    </button>
+                                </div>
+                                <div class="banner-meta">
+                                    <span>Volume : <strong>4 500 000 FCFA</strong></span>
+                                    <span>Fin : <strong>30 Juin 2026</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-banner__visual">
+                            <div class="visual-globe"></div>
+                        </div>
+                    </div>
+
+                    <!-- Platform Analytics Summary -->
+                    <div class="analytics-summary">
+                        <div class="stat-card">
+                            <div class="stat-card__icon text--green">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="stat-card__info">
+                                <span class="stat-title">Volume Global</span>
+                                <span class="stat-value" id="stat-total-volume">12 450 000 FCFA</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon text--gold">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="stat-card__info">
+                                <span class="stat-title">Positions Actives</span>
+                                <span class="stat-value" id="stat-active-bets">384</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon text--orange">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.4 15C20.3 15.6 20.3 17 19.4 17.6L18.4 18.4C17.5 19 16.1 18.3 16.1 17.3V16.7C16.1 15.6 15.2 14.7 14.1 14.7H13.5C12.4 14.7 11.5 15.6 11.5 16.7V17.3C11.5 18.3 10.1 19 9.2 18.4L8.2 17.6C7.3 17 7.3 15.6 8.2 15L9.2 14.2C10.1 13.6 10.1 12.2 9.2 11.6L8.2 10.8C7.3 10.2 7.3 8.8 8.2 8.2L9.2 7.4C10.1 6.8 11.5 7.5 11.5 8.5V9.1C11.5 10.2 12.4 11.1 13.5 11.1H14.1C15.2 11.1 16.1 10.2 16.1 9.1V8.5C16.1 7.5 17.5 6.8 18.4 7.4L19.4 8.2C20.3 8.8 20.3 10.2 19.4 10.8L18.4 11.6C17.5 12.2 17.5 13.6 18.4 14.2L19.4 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="stat-card__info">
+                                <span class="stat-title">Investisseurs payés</span>
+                                <span class="stat-value" id="stat-paid-winners">8 920 000 FCFA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories Selector -->
+                    <div class="categories-bar">
+                        <button class="category-pill active" data-category="all">Toutes</button>
+                        <button class="category-pill" data-category="politics">Politique</button>
+                        <button class="category-pill" data-category="economy">Économie</button>
+                        <button class="category-pill" data-category="music">Musique</button>
+                        <button class="category-pill" data-category="cinema">Cinéma</button>
+                    </div>
+
+                    <!-- Predictions Catalog Grid -->
+                    <div class="predictions-grid" id="predictions-catalog">
+                        <!-- Filled dynamically by JavaScript -->
+                        <div class="grid-loading">Chargement des marchés prédictifs...</div>
+                    </div>
+
+                </section>
+
+
+                <!-- 2. MY BETS VIEW -->
+                <section id="view-my-bets" class="view-section">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Mes Positions</h2>
+                            <p class="section-desc">Gérez vos investissements actifs et encaissez vos rendements sur les marchés clôturés.</p>
+                        </div>
+                        <div class="bets-filter-tabs">
+                            <button class="tab-btn active" data-bet-filter="all">Tous</button>
+                            <button class="tab-btn" data-bet-filter="active">En cours</button>
+                            <button class="tab-btn" data-bet-filter="resolved">Clôturés</button>
+                        </div>
+                    </div>
+
+                    <div class="bets-list" id="bets-container">
+                        <!-- Filled dynamically by JavaScript -->
+                        <div class="empty-state">Vous n'avez pas encore placé de prédiction.</div>
+                    </div>
+                </section>
+
+
+                <!-- 3. TRANSACTIONS VIEW -->
+                <section id="view-transactions" class="view-section">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Historique des Transactions</h2>
+                            <p class="section-desc">Consultez l'historique complet de vos dépôts par Mobile Money et de vos investissements de marché.</p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Référence / ID</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Opérateur / Canal</th>
+                                    <th>Montant</th>
+                                    <th>Statut</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactions-log-tbody">
+                                <!-- Filled dynamically by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="empty-state" id="transactions-empty-state">Aucune transaction enregistrée.</div>
+                    </div>
+                </section>
+
+
+                <!-- 4. CREATOR/ADMIN VIEW -->
+                <section id="view-creator" class="view-section">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Créateur de Marché</h2>
+                            <p class="section-desc">Devenez créateur de marché. Définissez une question d'actualité et ouvrez le carnet de commandes.</p>
+                        </div>
+                    </div>
+
+                    <div class="creator-card">
+                        <form id="create-prediction-form" class="creator-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="create-title">Question de Marché (Prédiction)</label>
+                                    <input type="text" id="create-title" placeholder="Ex: Wizkid va-t-il remplir le Stade de France en 2027 ?" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="create-category">Catégorie</label>
+                                    <select id="create-category" required>
+                                        <option value="politics">Politique</option>
+                                        <option value="economy">Économie</option>
+                                        <option value="music">Musique</option>
+                                        <option value="cinema">Cinéma</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="create-desc">Description & Critères de Résolution</label>
+                                <textarea id="create-desc" rows="3" placeholder="Décrivez comment la position sera clôturée (ex: sources d'information officielles, critères exacts...)" required></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="create-date">Date de Clôture</label>
+                                    <input type="date" id="create-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="create-initial-pool" id="create-initial-pool-label">Liquidité de départ (FCFA)</label>
+                                    <input type="number" id="create-initial-pool" value="500000" min="10000" required>
+                                </div>
+                            </div>
+
+                            <h3 class="form-subtitle">Configuration des Options de Réponse & Cotes</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="create-opt-yes">Option A (ex: Oui)</label>
+                                    <input type="text" id="create-opt-yes" value="Oui" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="create-odds-yes">Cote Initiale A (ex: 1.80)</label>
+                                    <input type="number" id="create-odds-yes" step="0.05" min="1.01" value="1.85" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="create-opt-no">Option B (ex: Non)</label>
+                                    <input type="text" id="create-opt-no" value="Non" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="create-odds-no">Cote Initiale B (ex: 2.00)</label>
+                                    <input type="number" id="create-odds-no" step="0.05" min="1.01" value="1.95" required>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--primary">Créer le Marché</button>
+                                <button type="reset" class="btn btn--outline">Réinitialiser</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- 5. BACKOFFICE ADMIN VIEW -->
+                <section id="view-backoffice" class="view-section">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Backoffice d'Administration</h2>
+                            <p class="section-desc">Supervisez l'activité de la plateforme, résolvez les marchés et ajustez les comptes de test.</p>
+                        </div>
+                    </div>
+
+                    <!-- Admin Statistics metrics -->
+                    <div class="analytics-summary">
+                        <div class="stat-card">
+                            <div class="stat-card__info">
+                                <span class="stat-title">Volume Total des Positions</span>
+                                <span class="stat-value" id="admin-total-volume">0 XOF</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__info">
+                                <span class="stat-title">Frais collectés Plateforme (5%)</span>
+                                <span class="stat-value text--emerald" id="admin-platform-fees">0 XOF</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__info">
+                                <span class="stat-title">Total Retraits validés</span>
+                                <span class="stat-value text--red" id="admin-total-withdrawals">0 XOF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-grid" style="display: grid; grid-template-columns: 1fr; gap: var(--space-lg); margin-top: var(--space-lg);">
+                        
+                        <!-- 1. Market resolutions panel -->
+                        <div class="creator-card">
+                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); border-bottom: 1px solid var(--border-color); padding-bottom: var(--space-sm);">
+                                <h3 class="form-subtitle" style="margin: 0; padding: 0; border: none;">Clôture & Résolution des Marchés</h3>
+                                <div class="form-group" style="flex: 0; min-width: 140px; margin: 0;">
+                                    <label class="switch-container" style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; cursor: pointer;">
+                                        <input type="checkbox" id="admin-toggle-sim-odds" checked style="width: auto;">
+                                        <span>Simulateur Cotes Live</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="table-container" style="max-height: 350px; overflow-y: auto;">
+                                <table class="transactions-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Question du Marché</th>
+                                            <th>Région</th>
+                                            <th>Volume</th>
+                                            <th>Statut</th>
+                                            <th>Action Admin</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-markets-tbody">
+                                        <!-- Dynamically generated in JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 2. Simulated users management -->
+                        <div class="creator-card">
+                            <h3 class="form-subtitle" style="margin: 0 0 var(--space-md) 0; padding: 0; border: none; border-bottom: 1px solid var(--border-color); padding-bottom: var(--space-sm);">Gestion des Comptes de Test (Investisseurs)</h3>
+                            <div class="table-container">
+                                <table class="transactions-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Nom / Profil</th>
+                                            <th>Région Active</th>
+                                            <th>Portefeuille Solde</th>
+                                            <th>Volume Traité</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-users-tbody">
+                                        <!-- Dynamically generated in JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    </div> <!-- Close #app-workspace -->
+
+    <!-- ==============================================
+         MODALS & DIALOGS
+         ============================================== -->
+
+    <!-- A. MOBILE MONEY RECHARGE MODAL -->
+    <div class="modal-backdrop" id="modal-recharge">
+        <div class="modal-card" id="recharge-modal-card">
+            
+            <button class="modal-close-btn" id="recharge-close">&times;</button>
+            
+            <!-- Step 1: Select Operator -->
+            <div class="recharge-step active" id="recharge-step-1">
+                <h3 class="modal-title">Recharger via Mobile Money</h3>
+                <p class="modal-subtitle">Sélectionnez votre opérateur de paiement local pour créditer votre compte instantanément.</p>
+                
+                <div class="operator-grid">
+                    <button class="operator-card-btn operator--orange" data-operator="orange">
+                        <div class="operator-logo">OM</div>
+                        <span class="operator-name">Orange Money</span>
+                    </button>
+                    <button class="operator-card-btn operator--mtn" data-operator="mtn">
+                        <div class="operator-logo">MTN</div>
+                        <span class="operator-name">MTN MoMo</span>
+                    </button>
+                    <button class="operator-card-btn operator--airtel" data-operator="airtel">
+                        <div class="operator-logo">airtel</div>
+                        <span class="operator-name">Airtel Money</span>
+                    </button>
+                    <button class="operator-card-btn operator--wave" data-operator="wave">
+                        <div class="operator-logo">wave</div>
+                        <span class="operator-name">Wave</span>
+                    </button>
+                    <button class="operator-card-btn operator--moov" data-operator="moov">
+                        <div class="operator-logo">moov</div>
+                        <span class="operator-name">Moov Africa</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Saisie Numero et Montant -->
+            <div class="recharge-step" id="recharge-step-2">
+                <h3 class="modal-title" id="recharge-form-title">Paiement</h3>
+                <p class="modal-subtitle">Indiquez votre numéro de téléphone et le montant à recharger.</p>
+                
+                <form id="recharge-submit-form" class="modal-form">
+                    <input type="hidden" id="selected-operator-val" value="">
+                    
+                    <div class="form-group">
+                        <label for="recharge-phone">Numéro de téléphone mobile</label>
+                        <div class="input-with-prefix">
+                            <span class="phone-prefix" id="phone-prefix-label">+221</span>
+                            <input type="tel" id="recharge-phone" placeholder="77 123 45 67" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recharge-amount">Montant du Dépôt (FCFA)</label>
+                        <input type="number" id="recharge-amount" placeholder="Entrez le montant" min="500" max="500000" step="500" required>
+                        
+                        <div class="amount-presets">
+                            <button type="button" class="preset-btn" data-value="1000">1 000 F</button>
+                            <button type="button" class="preset-btn" data-value="5000">5 000 F</button>
+                            <button type="button" class="preset-btn" data-value="10000">10 000 F</button>
+                            <button type="button" class="preset-btn" data-value="25000">25 000 F</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions-layout">
+                        <button type="button" class="btn btn--outline" id="recharge-back-to-1">Retour</button>
+                        <button type="submit" class="btn btn--primary" id="recharge-submit-btn">Initier le paiement</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 3: Simulation Overlay & Processing -->
+            <div class="recharge-step" id="recharge-step-3">
+                
+                <!-- This will change look based on active operator -->
+                <div class="ussd-screen">
+                    <div class="ussd-header">
+                        <span class="ussd-operator-badge" id="ussd-op-badge">Orange Money</span>
+                        <span class="ussd-sec-title">Vérification de sécurité</span>
+                    </div>
+
+                    <div class="ussd-body">
+                        <!-- Dynamic text depending on operator -->
+                        <p class="ussd-instruction" id="ussd-instruction-text">
+                            Une demande de confirmation a été envoyée sur votre téléphone. Saisissez votre code PIN secret à 4 chiffres ci-dessous pour valider la transaction.
+                        </p>
+                        
+                        <div class="ussd-amount-summary">
+                            <span>Montant à débiter :</span>
+                            <strong id="ussd-charge-amount">5 000 FCFA</strong>
+                        </div>
+
+                        <!-- Pin simulation interface -->
+                        <div class="pin-input-group">
+                            <input type="password" id="ussd-pin-code" maxlength="4" placeholder="••••" autocomplete="off" required>
+                        </div>
+
+                        <div class="simulation-note">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-warning">
+                                <path d="M12 9V11M12 15H12.01M5.07183 19H18.9282C20.4678 19 21.4301 17.3333 20.6603 16L13.7321 4C12.9623 2.66667 11.0377 2.66667 10.2679 4L3.33975 16C2.56995 17.3333 3.53223 19 5.07183 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Il s'agit d'une simulation sécurisée. Saisissez n'importe quel code PIN à 4 chiffres (ex: 1234) pour valider fictivement le dépôt.</span>
+                        </div>
+                    </div>
+
+                    <div class="ussd-footer">
+                        <button class="btn btn--ussd-cancel" id="btn-ussd-cancel">Annuler</button>
+                        <button class="btn btn--ussd-confirm" id="btn-ussd-confirm">Confirmer</button>
+                    </div>
+                </div>
+
+                <!-- Loader overlay (hidden by default) -->
+                <div class="loader-overlay" id="ussd-loader">
+                    <div class="spinner"></div>
+                    <p class="loader-text" id="ussd-loader-text">Traitement en cours...</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Success confirmation screen -->
+            <div class="recharge-step" id="recharge-step-4">
+                <div class="success-screen">
+                    <div class="success-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="success-checkmark">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="modal-title">Recharge réussie !</h3>
+                    <p class="success-desc">
+                        Votre portefeuille a été crédité de <strong id="success-deposited-amount">5 000 FCFA</strong> via <span id="success-op-name">MTN MoMo</span>.
+                    </p>
+                    <div class="transaction-detail-card">
+                        <div class="detail-row">
+                            <span>ID de transaction :</span>
+                            <strong id="success-tx-id">PA-TX-8394204</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Nouveau solde :</span>
+                            <strong id="success-new-balance">20 000 FCFA</strong>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary btn--block" id="btn-recharge-done">Fermer</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- B. PLACE PREDICTION (BET) MODAL -->
+    <div class="modal-backdrop" id="modal-place-bet">
+        <div class="modal-card">
+            
+            <button class="modal-close-btn" id="bet-close">&times;</button>
+            
+            <h3 class="modal-title">Prendre Position</h3>
+            <p class="modal-subtitle">Déterminez votre investissement et achetez des parts.</p>
+
+            <div class="bet-details-card">
+                <div class="bet-category-badge" id="bet-modal-category">Politique</div>
+                <h4 class="bet-details-question" id="bet-modal-question">Présidentielle au Sénégal : Qui succédera à Bassirou Diomaye Faye ?</h4>
+                
+                <div class="bet-choice-odds">
+                    <div class="choice-col">
+                        <span class="col-lbl">Votre choix :</span>
+                        <strong class="col-val text--emerald" id="bet-modal-choice">Candidat Coalition Clé</strong>
+                    </div>
+                    <div class="odds-col">
+                        <span class="col-lbl">Cote active :</span>
+                        <strong class="col-val text--gold" id="bet-modal-odds">1.85</strong>
+                    </div>
+                </div>
+            </div>
+
+            <form id="place-bet-submit-form" class="modal-form">
+                <!-- Hidden inputs -->
+                <input type="hidden" id="bet-prediction-id" value="">
+                <input type="hidden" id="bet-choice-index" value="">
+
+                <div class="form-group">
+                    <label for="bet-amount" id="bet-amount-label">Montant à investir (FCFA)</label>
+                    <input type="number" id="bet-amount" placeholder="Entrez le montant à investir" min="200" max="500000" step="100" required>
+                    
+                    <div class="wallet-balance-row">
+                        <span>Solde disponible : <strong id="bet-modal-user-balance">15 000 FCFA</strong></span>
+                        <button type="button" class="btn-text-action" id="bet-btn-max">Investir Max</button>
+                    </div>
+                </div>
+
+                <div class="bet-payout-estimate">
+                    <div class="estimate-row">
+                        <span>Rendement potentiel :</span>
+                        <strong id="bet-payout-val">0 FCFA</strong>
+                    </div>
+                    <div class="estimate-row font-sm text--muted">
+                        <span>Multiplicateur garanti lors de l'achat :</span>
+                        <span id="bet-payout-odds-desc">@ 1.85</span>
+                    </div>
+                </div>
+
+                <div class="error-msg-box" id="bet-error-msg" style="display: none;">
+                    Solde insuffisant pour acquérir cette position.
+                </div>
+
+                <div class="modal-actions-layout">
+                    <button type="button" class="btn btn--outline" id="btn-bet-cancel">Annuler</button>
+                    <button type="submit" class="btn btn--primary" id="btn-bet-confirm">Valider la position</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- C. MOBILE MONEY WITHDRAW MODAL -->
+    <div class="modal-backdrop" id="modal-withdraw">
+        <div class="modal-card" id="withdraw-modal-card">
+            
+            <button class="modal-close-btn" id="withdraw-close">&times;</button>
+            
+            <!-- Step 1: Form details -->
+            <div class="withdraw-step active" id="withdraw-step-1">
+                <h3 class="modal-title">Retirer des fonds</h3>
+                <p class="modal-subtitle">Transférez les liquidités de votre portefeuille vers votre compte Mobile Money.</p>
+                
+                <form id="withdraw-submit-form" class="modal-form">
+                    <div class="form-group">
+                        <label for="withdraw-operator">Opérateur Mobile Money local</label>
+                        <select id="withdraw-operator" required style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); width: 100%;">
+                            <!-- Filled dynamically by JavaScript based on selected country -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="withdraw-phone">Numéro de téléphone récepteur</label>
+                        <div class="input-with-prefix">
+                            <span class="phone-prefix" id="withdraw-phone-prefix-label">+221</span>
+                            <input type="tel" id="withdraw-phone" placeholder="77 123 45 67" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="withdraw-amount" id="withdraw-amount-label">Montant du retrait (FCFA)</label>
+                        <input type="number" id="withdraw-amount" placeholder="Entrez le montant à retirer" min="500" max="500000" step="500" required>
+                        
+                        <div class="wallet-balance-row">
+                            <span>Solde disponible : <strong id="withdraw-modal-user-balance">15 000 FCFA</strong></span>
+                            <button type="button" class="btn-text-action" id="withdraw-btn-max">Tout retirer (Max)</button>
+                        </div>
+                    </div>
+
+                    <div class="error-msg-box" id="withdraw-error-msg" style="display: none;">
+                        Solde insuffisant pour effectuer ce retrait.
+                    </div>
+
+                    <div class="modal-actions-layout">
+                        <button type="button" class="btn btn--outline" id="btn-withdraw-cancel">Annuler</button>
+                        <button type="submit" class="btn btn--primary" id="btn-withdraw-submit">Valider le retrait</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 2: Simulation Screen (USSD validation) -->
+            <div class="withdraw-step" id="withdraw-step-2">
+                <div class="ussd-screen">
+                    <div class="ussd-header">
+                        <span class="ussd-operator-badge" id="withdraw-ussd-op-badge">Orange Money</span>
+                        <span class="ussd-sec-title">Notification Push</span>
+                    </div>
+
+                    <div class="ussd-body">
+                        <p class="ussd-instruction" id="withdraw-ussd-instruction-text">
+                            Une notification de retrait mobile money a été poussée vers votre numéro. Saisissez votre code PIN secret pour confirmer la réception des fonds.
+                        </p>
+                        
+                        <div class="ussd-amount-summary">
+                            <span>Montant à recevoir :</span>
+                            <strong id="withdraw-ussd-charge-amount">5 000 FCFA</strong>
+                        </div>
+
+                        <div class="pin-input-group">
+                            <input type="password" id="withdraw-ussd-pin-code" maxlength="4" placeholder="••••" autocomplete="off" required>
+                        </div>
+
+                        <div class="simulation-note">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-warning">
+                                <path d="M12 9V11M12 15H12.01M5.07183 19H18.9282C20.4678 19 21.4301 17.3333 20.6603 16L13.7321 4C12.9623 2.66667 11.0377 2.66667 10.2679 4L3.33975 16C2.56995 17.3333 3.53223 19 5.07183 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Il s'agit d'une simulation sécurisée. Saisissez n'importe quel code PIN à 4 chiffres (ex: 1234) pour valider fictivement le virement.</span>
+                        </div>
+                    </div>
+
+                    <div class="ussd-footer">
+                        <button class="btn btn--ussd-cancel" id="btn-withdraw-ussd-cancel">Refuser</button>
+                        <button class="btn btn--ussd-confirm" id="btn-withdraw-ussd-confirm">Accepter</button>
+                    </div>
+                </div>
+
+                <!-- Loader overlay (hidden by default) -->
+                <div class="loader-overlay" id="withdraw-ussd-loader">
+                    <div class="spinner"></div>
+                    <p class="loader-text" id="withdraw-ussd-loader-text">Virement en cours...</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Success Screen -->
+            <div class="withdraw-step" id="withdraw-step-3">
+                <div class="success-screen">
+                    <div class="success-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="success-checkmark">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <div class="transaction-detail-card">
+                        <div class="detail-row">
+                            <span>ID de retrait :</span>
+                            <strong id="success-withdraw-tx-id">PA-WD-8394204</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Nouveau solde :</span>
+                            <strong id="success-withdraw-new-balance">20 000 FCFA</strong>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary btn--block" id="btn-withdraw-done">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         LEGAL POPUP MODALS
+         ============================================== -->
+    <!-- CGU Modal -->
+    <div class="modal-backdrop" id="modal-cgu">
+        <div class="modal-card" style="max-width: 600px;">
+            <button type="button" class="modal-close-btn" id="cgu-close">&times;</button>
+            <h3 class="modal-title" data-i18n="cgu_title">Conditions Générales d'Utilisation (CGU)</h3>
+            <p class="modal-subtitle" data-i18n="cgu_subtitle">Dernière mise à jour : Juin 2026</p>
+            <div class="legal-content" data-i18n-html="cgu_content" style="max-height: 400px; overflow-y: auto; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; padding-right: var(--space-xs); border-top: 1px solid var(--border-color); padding-top: var(--space-md);">
+                <h4 style="color: var(--text-primary); margin-top: var(--space-sm); font-size: 0.95rem;">1. Objet de la plateforme</h4>
+                <p style="margin-bottom: var(--space-sm);">PredicAfrica est une plateforme de simulation pédagogique représentant une bourse d'opinions et de prédictions sur l'actualité africaine. L'ensemble des transactions, soldes de portefeuilles, cotes et gains sont fictifs et n'ont aucune valeur monétaire ou juridique réelle.</p>
+                <h4 style="color: var(--text-primary); margin-top: var(--space-sm); font-size: 0.95rem;">2. Utilisation du service</h4>
+                <p style="margin-bottom: var(--space-sm);">L'utilisation de la plateforme est réservée à des fins de divertissement et de démonstration technique. Tout abus ou tentative de manipulation des scripts locaux (localStorage) à des fins de fraude n'affecte que l'instance locale de l'utilisateur.</p>
+                <h4 style="color: var(--text-primary); margin-top: var(--space-sm); font-size: 0.95rem;">3. Limitation de responsabilité</h4>
+                <p style="margin-bottom: var(--space-sm);">Les concepteurs de PredicAfrica ne sauraient être tenus responsables de toute mauvaise interprétation du caractère financier de cette application, celle-ci étant strictement un prototype (MVP).</p>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Privacy Policy Modal -->
+    <div class="modal-backdrop" id="modal-privacy">
+        <div class="modal-card" style="max-width: 600px;">
+            <button type="button" class="modal-close-btn" id="privacy-close">&times;</button>
+            <h3 class="modal-title" data-i18n="privacy_title">Politique de Confidentialité</h3>
+            <p class="modal-subtitle" data-i18n="privacy_subtitle">Respect de votre vie privée</p>
+            <div class="legal-content" data-i18n-html="privacy_content" style="max-height: 400px; overflow-y: auto; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; padding-right: var(--space-xs); border-top: 1px solid var(--border-color); padding-top: var(--space-md);">
+                <h4 style="color: var(--text-primary); margin-top: var(--space-sm); font-size: 0.95rem;">1. Collecte des données</h4>
+                <p style="margin-bottom: var(--space-sm);">PredicAfrica ne collecte aucune donnée personnelle sur ses serveurs. L'ensemble des données d'utilisation (solde de portefeuille, positions achetées, historique des recharges et retraits) est stocké localement et exclusivement dans le navigateur de l'utilisateur via le mécanisme de <code>localStorage</code>.</p>
+                <h4 style="color: var(--text-primary); margin-top: var(--space-sm); font-size: 0.95rem;">2. Transmission des données</h4>
+                <p style="margin-bottom: var(--space-sm);">Aucune donnée n'est transmise à des tiers ou hébergée à l'extérieur de votre appareil. En vidant le cache de votre navigateur ou en effaçant les données de site, l'ensemble de votre historique sera définitivement supprimé.</p>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Personal Data Modal -->
+    <div class="modal-backdrop" id="modal-data">
+        <div class="modal-card" style="max-width: 600px;">
+            <button type="button" class="modal-close-btn" id="data-close">&times;</button>
+            <h3 class="modal-title" data-i18n="data_title">Gestion des Données Personnelles</h3>
+            <p class="modal-subtitle" data-i18n="data_subtitle">Contrôle de vos informations locales</p>
+            <div class="legal-content" data-i18n-html="data_content" style="max-height: 400px; overflow-y: auto; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; padding-right: var(--space-xs); border-top: 1px solid var(--border-color); padding-top: var(--space-md);">
+                <h4 style="color: var(--text-primary); margin-top: var(--space-sm); font-size: 0.95rem;">1. Droit d'accès et de rectification</h4>
+                <p style="margin-bottom: var(--space-sm);">Conformément aux réglementations sur la protection des données (RGPD / lois africaines sur la protection de la vie privée), vous disposez du contrôle total sur vos données. Comme celles-ci sont stockées localement, vous pouvez les modifier directement en effectuant des recharges, retraits ou en réinitialisant le simulateur depuis le panneau d'administration (Backoffice).</p>
+                <h4 style="color: var(--text-primary); margin-top: var(--space-sm); font-size: 0.95rem;">2. Cookies et traceurs</h4>
+                <p style="margin-bottom: var(--space-sm);">Cette application n'utilise aucun cookie tiers ou traceur publicitaire. Seul le stockage local technique est exploité pour mémoriser l'état de votre portefeuille d'une session à l'autre.</p>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Main JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
